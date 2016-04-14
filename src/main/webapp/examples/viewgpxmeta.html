@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GpxDb.com View GPX Meta Data</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="../js/lib/json2.js"></script>
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/jquery.tmpl.js"></script>
+    <script src="../js/lib/underscore.js"></script>
+    <script src="../js/lib/backbone.js"></script>
+    <script src="../js/lib/backbone.localstorage.js"></script>
+    <script src="../js/app.js"></script>
+  </head>
+  <body>
+
+
+	<div class="container">
+	 <div class="row">
+	    <div class="span2">
+	      <h3>source</h3>
+	       <ul>
+	       	<li><button id="btnFetchJson" class="btn btn-small" type="submit">Fetch</button></li>
+	       	<li><button id="btnClear" class="btn" btn-small type="submit">Clear</button></li>
+	       	<li><button id="btnExcecutiveSummary" class="btn" btn-small type="submit">btnExcecutiveSummary</button></li>
+	       	<li><button id="btnObjective" class="btn" btn-small type="submit">btnObjective</button></li>
+	       </ul>
+	    </div>
+
+	    <div id="target" class="span8">
+	      <h3>target</h3>
+	      <p>These headings and the text area show data retrieve from the result and the raw data.</p>
+	      <h4 id="FormattedName"></h4>
+	      <h4 id="Objective"></h4>
+	      <h4 id="EmploymentHistory"></h4>
+	      
+	      <textarea id="result" class="span8" name="result" cols="300" rows="5"></textarea>
+
+	      <div id="divExcecutiveSummary"></div>
+	      <div id="divObjective"></div>
+	    </div>
+	    
+	  </div>
+	  <hr>
+	</div>
+
+	<script id="template_ExecutiveSummary" type="text/template">
+		<div class="control-group">
+			<label class="control-label" for="ExecutiveSummary">ExecutiveSummary</label>
+			<div class="controls">
+				<textarea id="ExecutiveSummary" class="span6"
+					name="ExecutiveSummary" cols="300" rows="2">${executiveSummary}</textarea>
+			</div>
+		</div>
+	</script>
+
+	<script id="template_Objective" type="text/template">
+		<div class="control-group">
+			<label class="control-label" for="Objective">Objective</label>
+			<div class="controls">
+				<textarea id="Objective" class="span6"
+					name="Objective" cols="300" rows="2">${objective}</textarea>
+			</div>
+		</div>
+	</script>
+
+</body>
+</html>

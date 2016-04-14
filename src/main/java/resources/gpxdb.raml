@@ -1,0 +1,64 @@
+﻿#%RAML 1.0
+title: GPXDB API
+version: 1.0
+baseUri: http://rest.gpxdb.com/api/v1
+mediaType: application/json
+protocol: [ HTTP ]
+
+/admin:
+	displayName: 
+	description: Resource for user registration.
+
+/version:
+	displayName: 
+	description: Returns the api version.
+
+/lov:
+	displayName: 
+	description: A list of values for data entry.
+
+/gpx:{gpxid}
+	displayName: 
+	description: A gpx 
+
+/gpxs:
+	 displayName: 
+	 description: A collection of GPXs
+
+/wpt:
+	 displayName: 
+	 description: A waypoint,	 
+
+/wpts:
+	 displayName: 
+	 description: A list of waypoints.	
+
+/trk:
+	 displayName: 
+	 description: A track, made of one segment containing waypoints, an ordered list of points describing a path.	 
+
+/trks:
+	 displayName: 
+	 description: A list of tracks.
+
+/trkseg:
+	 displayName: 
+	 description: A track segment.	
+	 
+/trkpt:
+	 displayName: 
+	 description: A waypoint that is a member of a track.		
+	 
+/rte:
+	 displayName: 
+	 description: A route, made an ordered list of points describing a path.	 
+
+/rtes:
+	 displayName: 
+	 description: A list of routes.
+
+	 
+/rtept:
+	 displayName: 
+	 description: A waypoint that is a member of a route.		   
+

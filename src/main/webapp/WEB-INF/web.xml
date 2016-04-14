@@ -1,0 +1,100 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+      metadata-complete="true" version="3.0"> 
+	<display-name>GPX Database</display-name>
+	<description>
+	   Database engine for the gpxdb.com application.
+	</description>
+	
+  	<context-param>
+		<description>Location to store uploaded file</description>
+		<param-name>file-upload</param-name>
+		<param-value>/Users/chrisp/Documents/workspace-gpxdb/gpxrs/src/working-folder</param-value>
+	</context-param>
+	
+   	<servlet>
+		<servlet-name>GPXDB REST Service</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.gpxdb.resource com.gpxdb.resource.exception com.gpxdb.auth.resource</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>GPXDB REST Service</servlet-name>
+		<url-pattern>/v1/*</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+    	<error-code>400</error-code>
+    	<location>/err/error400.jsp</location>
+	</error-page>
+	<error-page>
+    	<error-code>401</error-code>
+    	<location>/err/error401.jsp</location>
+	</error-page>	
+	<error-page>
+    	<error-code>403</error-code>
+    	<location>/err/error403.jsp</location>
+	</error-page>	
+	<error-page>
+    	<error-code>404</error-code>
+    	<location>/err/error404.jsp</location>
+	</error-page>
+	<error-page>
+    	<error-code>500</error-code>
+    	<location>/err/error500.jsp</location>
+	</error-page>	
+	
+	<welcome-file-list>
+	   <welcome-file>index.html</welcome-file>
+	   <welcome-file>index.htm</welcome-file>
+	   <welcome-file>index.jsp</welcome-file>
+	   <welcome-file>default.html</welcome-file>
+	   <welcome-file>default.htm</welcome-file>
+	   <welcome-file>default.jsp</welcome-file>
+	 </welcome-file-list>
+	
+	<servlet>
+	  <servlet-name>about</servlet-name>
+	  <jsp-file>/about.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>about</servlet-name>
+		<url-pattern>/about</url-pattern>
+	</servlet-mapping>
+		<servlet>
+	<servlet-name>apidocsJsp</servlet-name>
+	  <jsp-file>/apidocs.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>apidocsJsp</servlet-name>
+		<url-pattern>/apidocs</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>contactJsp</servlet-name>
+	  <jsp-file>/contact.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>contactJsp</servlet-name>
+		<url-pattern>/contact</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>indexJsp</servlet-name>
+	  <jsp-file>/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>indexJsp</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>	
+		<servlet>
+	  <servlet-name>resourcesJsp</servlet-name>
+	  <jsp-file>/resources.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>resourcesJsp</servlet-name>
+		<url-pattern>/resources</url-pattern>
+	</servlet-mapping>
+</web-app>
