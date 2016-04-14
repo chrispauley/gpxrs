@@ -3,5 +3,6 @@ before_script:
   - mysql -e "create database IF NOT EXISTS gpxdb;" -uroot
   - mysql -e "use gpxdb; create table tokyo (id int(11))"
   - mysql -e "use gpxdb; create table new_york (id int(11))"
+  - mysql -e "gpxdb < src/sql/gpxdb.ddl.sql"
 script:
   - php -f src/php/show_tables.php
