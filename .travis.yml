@@ -1,8 +1,11 @@
 language: php
 before_script:
-  - mysql -e "create database IF NOT EXISTS gpxdb;" -uroot
+  - mysql -e "CREATE DATABASE IF NOT EXISTS `gpxdb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;" -uroot
   - mysql -e "use gpxdb; create table tokyo (id int(11))"
   - mysql -e "use gpxdb; create table new_york (id int(11))"
-  - mysql -uroot -e gpxdb < src/sql/gpxdb.ddl.sql
+  - mysql -e "use gpxdb; SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";"
+  - mysql -e "use gpxdb; SET time_zone = "+00:00";"
+
+  - mysql -uroot -e "gpxdb < src/sql/gpxdb.ddl.sql"
 script:
   - php -f src/php/show_tables.php
