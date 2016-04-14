@@ -1,6 +1,6 @@
 <?php
 $pdo = new PDO(
-  'mysql:host=localhost;dbname=hoge;charset=utf8',
+  'mysql:host=localhost;dbname=gpxdb;charset=utf8',
   'root',
   ''
 );
