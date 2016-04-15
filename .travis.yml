@@ -1,6 +1,6 @@
 language: php
 before_script:
-  - mysql -e "CREATE DATABASE IF NOT EXISTS `gpxdb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;" -uroot
+  - mysql -e "CREATE DATABASE IF NOT EXISTS `gpxdb`;" -uroot
   - mysql -e "use gpxdb; create table tokyo (id int(11))"
   - mysql -e "use gpxdb; create table new_york (id int(11))"
   - mysql -e "use gpxdb; SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";"
