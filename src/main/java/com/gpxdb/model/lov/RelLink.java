@@ -43,7 +43,7 @@ public class RelLink {
 		RelLink link = new RelLink();
 		link.href = matcher.group(1);
 		String[] props = matcher.group(2).split(";");
-		HashMap<String, String> map = new HashMap();
+		HashMap<String, String> map = new HashMap<String, String>();
 		for(String prop : props){
 			String[] split = prop.split("=");
 			map.put(split[0].trim(), split[2].trim());

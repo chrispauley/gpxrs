@@ -3,6 +3,7 @@
 src/main/java/resources/context.xml
 src/main/test/resources/snippets.txt
 target/*
+src/test/*
 
 ### SublimeText ###
 # cache files for sublime text
@@ -98,3 +99,4 @@ local.properties
 
 
 gpxrs.sublime-project
+/target/
